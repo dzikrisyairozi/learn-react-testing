@@ -9,7 +9,7 @@ const Hero = () => {
         Demo
       </h1>
       <p className='text-xl font-normal text-gray-200'>
-        React Data Query
+        React Unit Testing
       </p>
       <div>
         <Link href='/movies'>
