@@ -1,13 +1,21 @@
-module.exports = {
-    testEnvironment: 'jsdom',
-    moduleNameMapper: {
-      '^@/(.*)$': '<rootDir>/src/$1',
-    },
-    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
-    transform: {
-      '^.+\\.(ts|tsx)$': 'babel-jest',
-    },
-    testMatch: ['**/__tests__/**/*.spec.(ts|tsx)'],
-    setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
-  };
-  
+// jest.config.js
+const nextJest = require('next/jest')
+
+const createJestConfig = nextJest({
+  // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
+  dir: './',
+})
+
+// Add any custom config to be passed to Jest
+/** @type {import('jest').Config} */
+const customJestConfig = {
+  // Add more setup options before each test is run
+  // setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
+  testEnvironment: 'jest-environment-jsdom',
+}
+
+// createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
+module.exports = createJestConfig(customJestConfig)
