@@ -1,12 +1,6 @@
 import Head from 'next/head'
-import { Inter } from '@next/font/google'
 import Hero from '@/sections/Hero'
-import About from '@/sections/About'
-import Service from '@/sections/Service'
 import Layout from '@/components/layout/Layout'
-
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
