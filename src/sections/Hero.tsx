@@ -3,7 +3,7 @@ import React from 'react'
 
 const Hero = () => {
   return (
-    <section id='banner' className="bg-[url('/bg.jpg')] bg-cover bg-no-repeat">
+    <section data-testid="hero-section" id='banner' className="bg-[url('/bg.jpg')] bg-cover bg-no-repeat">
     <div className='layout flex flex-col gap-y-3 justify-center min-h-screen text-center bg-[#00000075]'>
       <h1 className='text-6xl font-bold text-white'>
         Demo
