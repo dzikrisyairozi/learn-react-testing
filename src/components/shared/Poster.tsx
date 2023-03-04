@@ -2,8 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-import { Url } from 'url';
-
 type PosterProps = ({
     id?: number,
     link: string,
@@ -19,7 +17,7 @@ const Poster = ({
     title,
     release_date,
     overview, 
-    ...props
+    // ...props
 }: PosterProps) => {
   return (
     <>
